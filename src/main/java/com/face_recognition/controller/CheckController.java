@@ -15,9 +15,17 @@ public class CheckController {
     CheckService checkService;
 
     @GetMapping("/check")
-    public boolean checkIfPresent(@RequestParam int idEmploye, @RequestParam Date dateToCheck){
+    public String checkIfPresent(@RequestParam int idEmploye, @RequestParam Date dateToCheck) {
 
-        return checkService.check(idEmploye,dateToCheck);
+        Boolean testPesence = checkService.check(idEmploye, dateToCheck);
+
+        if (testPesence == true) {
+            return "Employe present ";
+        } else {
+            return "Employe Abscent ";
+        }
         //System.out.println(" id "+idEmploye+" date is : "+dateToCheck);
+
     }
+
 }

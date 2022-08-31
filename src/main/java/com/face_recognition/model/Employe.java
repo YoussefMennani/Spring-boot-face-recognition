@@ -68,4 +68,15 @@ public class Employe {
     public void setCnie(String cnie) {
         this.cnie = cnie;
     }
+
+    @Override
+    public String toString() {
+        return "Employe{" +
+                "id=" + id +
+                ", prenom='" + prenom + '\'' +
+                ", nom='" + nom + '\'' +
+                ", cnie='" + cnie + '\'' +
+                ", presences=" + presences +
+                '}';
+    }
 }

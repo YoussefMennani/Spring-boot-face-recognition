@@ -1,5 +1,6 @@
 package com.face_recognition.controller;
 
+import com.face_recognition.config.PresenceDto;
 import com.face_recognition.model.Employe;
 import com.face_recognition.model.Presence;
 import com.face_recognition.service.PresenceService;
@@ -30,5 +31,10 @@ public class PresenceController {
 
 
         return  presenceService.savePresence(presence);
+    }
+
+    @GetMapping("/presence/{id}")
+    public PresenceDto getPresence(@PathVariable int id){
+        return  presenceService.getPresence(id);
     }
 }
