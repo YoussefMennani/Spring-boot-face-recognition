@@ -1,4 +1,4 @@
-package com.face_recognition.exception;
+package com.face_recognition.exception.employe;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

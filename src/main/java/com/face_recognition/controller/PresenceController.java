@@ -35,6 +35,7 @@ public class PresenceController {
 
     @GetMapping("/presence/{id}")
     public PresenceDto getPresence(@PathVariable int id){
+
         return  presenceService.getPresence(id);
     }
 }

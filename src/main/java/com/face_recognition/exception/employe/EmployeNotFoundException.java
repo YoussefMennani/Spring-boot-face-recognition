@@ -1,4 +1,4 @@
-package com.face_recognition.exception;
+package com.face_recognition.exception.employe;
 
 public class EmployeNotFoundException extends RuntimeException{
 

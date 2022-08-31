@@ -1,10 +1,9 @@
 package com.face_recognition.service;
 
 import com.face_recognition.dto.EmployePresenceDto;
-import com.face_recognition.exception.EmployeNotFoundException;
+import com.face_recognition.exception.employe.EmployeNotFoundException;
 import com.face_recognition.model.Employe;
 import com.face_recognition.repository.EmployeRepository;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,7 @@
 package com.face_recognition.service;
 
 import com.face_recognition.dto.PresenceDto;
+import com.face_recognition.exception.presence.PresenceNotFoundException;
 import com.face_recognition.model.Presence;
 import com.face_recognition.repository.PresenceRepository;
 import org.modelmapper.ModelMapper;
@@ -32,7 +33,11 @@ public class PresenceService {
     }
 
     public PresenceDto getPresence(int id) {
-        Presence emp = presenceRepository.getById(id);
-        return modelMapper.map(emp,PresenceDto.class);
+        if(!presenceRepository.findById(id).isEmpty()) {
+            Presence emp = presenceRepository.getById(id);
+            return modelMapper.map(emp, PresenceDto.class);
+        }else{
+            throw new PresenceNotFoundException("Presence with id : "+id+" Not Found !");
+        }
     }
 }
