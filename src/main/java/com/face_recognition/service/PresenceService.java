@@ -1,7 +1,6 @@
 package com.face_recognition.service;
 
-import com.face_recognition.config.PresenceDto;
-import com.face_recognition.model.Employe;
+import com.face_recognition.dto.PresenceDto;
 import com.face_recognition.model.Presence;
 import com.face_recognition.repository.PresenceRepository;
 import org.modelmapper.ModelMapper;

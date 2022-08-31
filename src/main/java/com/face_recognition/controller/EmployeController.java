@@ -2,9 +2,11 @@ package com.face_recognition.controller;
 
 import com.face_recognition.dto.EmployePresenceDto;
 import com.face_recognition.model.Employe;
+import com.face_recognition.response.ResponseHandler;
 import com.face_recognition.service.EmployeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
@@ -25,14 +27,15 @@ public class EmployeController {
     EmployeService employeService;
 
     @GetMapping("/employes")
-    public List<EmployePresenceDto> employes(){
-        return employeService.getAllEmployes();
+    public ResponseEntity<Object> employes(){
+        List<EmployePresenceDto> employePresenceDtos = employeService.getAllEmployes();
+        return ResponseHandler.responseBuilder("Employes got with success",HttpStatus.OK,employePresenceDtos);
     }
 
     @GetMapping("/employe/{id}")
-    public EmployePresenceDto getEmploye(@PathVariable int id){
-        return employeService.getEmploye(id);
-
+    public ResponseEntity<Object> getEmploye(@PathVariable int id){
+        EmployePresenceDto employePresenceDto = employeService.getEmploye(id);
+        return ResponseHandler.responseBuilder("Employe with id : "+id+" got with success",HttpStatus.OK,employePresenceDto);
     }
 
     @PostMapping("/employe")

@@ -1,4 +1,4 @@
-package com.face_recognition.config;
+package com.face_recognition.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
